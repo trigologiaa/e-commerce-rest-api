@@ -54,8 +54,9 @@ CREATE DATABASE ecommerce;
 ### Clone the repository
 
 ```bash
-git clone 
-cd 
+# Clone with SSH
+git clone git@github.com:trigologiaa/e-commerce-rest-api.git
+cd e-commerce-rest-api/
 ```
 
 ### Run the application
@@ -63,7 +64,7 @@ cd
 Use the Gradle wrapper to build and start the application. Spring Boot will
 automatically generate the database schema based on the entities.
 
-Give permissions to the file.
+Grant execute permissions to the file previously.
 
 ```bash
 ./gradlew clean bootRun
@@ -77,6 +78,9 @@ To interact with the API, it is recommended to use Postman or any similar API
 client. The endpoints are secured; therefore, a specific operational flow must be
 followed.
 
+An `openapi.yml` file is attached, which can be imported into Postman to test the
+API.
+
 ### 1. User registration
 
 Create a new user in the system to obtain credentials.
@@ -87,10 +91,10 @@ Create a new user in the system to obtain credentials.
 
   ```json
   {
-      "firstName": "John",
-      "lastName": "Doe",
-      "email": "john.doe@example.com",
-      "password": "securePassword123"
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john.doe@example.com",
+    "password": "securePassword123"
   }
   ```
 
@@ -106,8 +110,8 @@ If the user is already registered, authenticate to receive a fresh token.
 
   ```json
   {
-      "email": "john.doe@example.com",
-      "password": "securePassword123"
+    "email": "john.doe@example.com",
+    "password": "securePassword123"
   }
   ```
 
@@ -131,11 +135,11 @@ Add inventory to the store. Requires authentication.
 
   ```json
   {
-      "name": "Mechanical Keyboard",
-      "description": "RGB Mechanical Keyboard with Red Switches",
-      "price": 75.50,
-      "stock": 50,
-      "imageUrl": "[http://example.com/keyboard.jpg](http://example.com/keyboard.jpg)"
+    "name": "Mechanical Keyboard",
+    "description": "RGB Mechanical Keyboard with Red Switches",
+    "price": 75.5,
+    "stock": 50,
+    "imageUrl": "[http://example.com/keyboard.jpg](http://example.com/keyboard.jpg)"
   }
   ```
 
@@ -150,12 +154,12 @@ quantity against the available stock and deduct it if the transaction is success
 
   ```json
   {
-      "lines": [
-          {
-              "productId": 1,
-              "quantity": 2
-          }
-      ]
+    "lines": [
+      {
+        "productId": 1,
+        "quantity": 2
+      }
+    ]
   }
   ```
 
