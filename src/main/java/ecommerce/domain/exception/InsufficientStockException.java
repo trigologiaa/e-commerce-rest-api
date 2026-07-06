@@ -8,6 +8,9 @@ package ecommerce.domain.exception;
  * @version 1.0.0
  */
 public class InsufficientStockException extends DomainException {
+  /** The unique identifier for this version of the serialized class. */
+  private static final long serialVersionUID = 1L;
+
   /**
    * Constructs a new InsufficientStockException with the specified detail message.
    *
